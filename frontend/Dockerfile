@@ -2,7 +2,9 @@ FROM node:alpine
 
 WORKDIR /app/frontend
 
-COPY . .
+COPY package.json ./
+COPY package-lock.json ./
 
-EXPOSE 3000
-# CMD ["npm", "start"]
+COPY ./ ./
+
+CMD ["npm", "start"]
